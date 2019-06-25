@@ -1,2 +1,2 @@
 # Cyberpedia
-**Project Cyberpedia site for test JS functions
+**Project Cyberpedia site for test JS functions**
