@@ -1,6 +1,6 @@
 ;(function 	() {
 	'use strict'
-
+	// Объявляем переменные из new.html
 	const markdownSourceElement = document.querySelector('#markdown-source')
 	const markdownResultElement = document.querySelector('#markdown-result')
 	const saveArticleButton = document.querySelector('#save-article-button')
@@ -19,7 +19,7 @@
 				article = articles[i]
 			}
 		}
-
+		// Выводим в область название статьи и содержимое статьи из массива 'articles'
 		markdownSourceElement.value = article.content
 		articleTitleElement.value = article.title
 
@@ -43,12 +43,7 @@
 					articles[i].title = articleTitleElement.value
 					articles[i].content = markdownSourceElement.value
 				}
-			}
-			// const article = {
-			// 	id: id,
-			// 	title: articleTitleElement.value,
-			// 	content: markdownSourceElement.value
-			// }
+			}			
 		}
 		else {
 			// Если нет, то сохраняет как новую статью
@@ -57,13 +52,12 @@
 				title: articleTitleElement.value,
 				content: markdownSourceElement.value
 			}
-
+			// Присваиваем значение 'id' для массива 'articles' +1
 			newArticle.id = articles.length + 1
 			articles.push(newArticle)
 		}
-		
+		// Кладем добавленную статью в localStorage массива 'articles'
 		localStorage.setItem('articles', JSON.stringify(articles))
-
 		// Перевод страницы на отредактированную статью
 		if (id) {
 			location.replace('article.html?id=' + id)
