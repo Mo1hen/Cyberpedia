@@ -1,6 +1,6 @@
 ;(function 	() {
 	'use strict'
-
+	// Создаем массив 'articles' в котором хранятся статичные статьи с 3 переменными id, title, content
 	const articles = [
 		{
 			id: 1,
@@ -105,7 +105,7 @@
 		}
 
 	]
-
+	// Упаковываем массив 'articles' с помощью JSON и кладем его в LocalStorage
 	if (!localStorage.getItem('articles')) {
 		localStorage.setItem('articles', JSON.stringify(articles))
 	}
